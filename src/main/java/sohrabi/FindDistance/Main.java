@@ -9,7 +9,7 @@
 
 public class Main {
     public static void main(String[] args) {
-        int[] elements = {23, 45, 34, 12, 45, 4, 38, 56, 2, 49, 100};
+        int[] elements = {23, 45, 34, -100, 45, 4, 38, 56, 2, 49, 1};
         int smallest = elements[0];
         int secondSmallest = elements[0];
         int smallestIndex = 0;
@@ -24,9 +24,13 @@ public class Main {
                 smallestIndex = i;
 
             }
+            if (elements[i] < secondSmallest && elements[i] != smallest) {
+                secondSmallest = elements[i];
+                secondSmallestIndex = i;
+            }
+
         }
         int distance = secondSmallestIndex - smallestIndex;
         System.out.println(distance);
     }
-
 }
