@@ -1,34 +1,30 @@
 public class Reverse {
 
-    public static String reverse(String input){
+    public static String reverse(String input) {
+
         char[] in = input.toCharArray();
-        int begin=0;
-        int end=in.length-1;
+        int begin = 0;
+        int end = in.length - 1;
         char temp;
-        while(end>begin){
+        while (end > begin) {
             temp = in[begin];
-            in[begin]=in[end];
+            in[begin] = in[end];
             in[end] = temp;
             end--;
             begin++;
         }
-        return new String(in);
-
-    }
-
-    public static String reverse2(String input2) {
-        String str[] = input2.split(" ");
-        String finalStr="";
-        for(int i = str.length-1; i>= 0 ;i--){
-            finalStr += str[i]+" ";
+        String str = String.valueOf(in);
+        String str2[] = str.split(" ");
+        String finalStr = "";
+        for (int i = str2.length - 1; i >= 0; i--) {
+            finalStr += str2[i] + " ";
         }
-        return new String(finalStr);
+        return finalStr;
+
     }
 
-
-    
-   public static void main(String[] arg){
-    String string = "мама мыла раму";
-    System.out.println(reverse2(reverse(string)));
+    public static void main(String[] arg) {
+        String string = "мама мыла раму";
+        System.out.println(reverse(string));
     }
 }
